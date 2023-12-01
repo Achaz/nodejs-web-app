@@ -31,3 +31,4 @@ variable "device-index" {
 variable "repository-url" {
   type = string
 }
+

@@ -1,4 +1,5 @@
 module "application-server" {
+
   source = "./application-server"
 
   ami-id = var.ami-id # AMI for an Amazon Linux instance for region: us-east-1
@@ -9,4 +10,5 @@ module "application-server" {
   device-index         = 0
   network-interface-id = aws_network_interface.nodejs-web-app.id
   repository-url       = aws_ecr_repository.nodejs-web-app.repository_url
+
 }

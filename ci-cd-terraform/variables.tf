@@ -10,10 +10,6 @@ variable "aws-region" {
   type = string
 }
 
-variable "ami-id" {
-  type = string
-}
-
 variable "admin-username" {
   type = string
 }
@@ -40,4 +36,8 @@ variable "job-name" {
 
 variable "secrets" {
   type = map(string)
+}
+
+variable "ami-id" {
+  type = string
 }
