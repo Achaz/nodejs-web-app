@@ -132,8 +132,13 @@ dist
 #mochawesomeReport
 mochawesome-report
 
-Dockerfile
-Dockerfile.test
-node_modules
-.gitignore
-.git
+#Terraform
+.terraform*
+*.tfstate*
+*.tfvars
+
+# key
+*.key
+*.pem
+
+
