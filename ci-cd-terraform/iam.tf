@@ -50,13 +50,14 @@ resource "aws_iam_role" "jenkins" {
     ]
   })
 
-  managed_policy_arns = [aws_iam_policy.ecr-access.arn,
-    aws_iam_policy.s3-access.arn,
-    aws_iam_policy.ec2-access.arn,
-  aws_iam_policy.secrets-access.arn]
+  managed_policy_arns = [ aws_iam_policy.ecr-access.arn,
+                          aws_iam_policy.s3-access.arn,
+                          aws_iam_policy.ec2-access.arn,
+                          aws_iam_policy.secrets-access.arn]
 
 }
 
+# iam policy
 resource "aws_iam_policy" "ecr-access" {
   name   = "ecr-access"
   policy = <<EOF

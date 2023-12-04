@@ -144,16 +144,18 @@ resource "aws_security_group" "allow-all-outbound" {
 }
 
 # 7.1 Create a Network Interface for jenkins
+
 resource "aws_network_interface" "jenkins" {
   subnet_id   = aws_subnet.subnet-public-jenkins.id
   private_ips = ["10.0.1.50"]
-  security_groups = [aws_security_group.allow-all-outbound.id,
-    aws_security_group.allow-ssh-traffic.id,
-    aws_security_group.allow-jenkins-traffic.id,
-  aws_security_group.allow-staging-traffic.id]
+  security_groups = [ aws_security_group.allow-all-outbound.id,
+                      aws_security_group.allow-ssh-traffic.id,
+                      aws_security_group.allow-jenkins-traffic.id,
+                      aws_security_group.allow-staging-traffic.id]
 }
 
 # 7.2 Create a Network Interface for nodejs Web App
+
 resource "aws_network_interface" "nodejs-web-app" {
   subnet_id   = aws_subnet.subnet-public-web-app.id
   private_ips = ["10.0.3.50"]
